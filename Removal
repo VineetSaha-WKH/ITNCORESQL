@@ -1,0 +1,266 @@
+USE [COVID19];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\skoduri];
+DROP USER [WKNET\skoduri];
+GO
+
+USE [COVID19]
+GO
+ALTER AUTHORIZATION ON SCHEMA::[legacy-covid19] TO [dbo]
+GO
+
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\sng];
+ALTER ROLE [db_datawriter] DROP MEMBER [WKNET\sng];
+ALTER ROLE [db_ddladmin] DROP MEMBER [WKNET\sng];
+DROP USER [WKNET\sng];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\mefatian];
+DROP USER [WKNET\mefatian];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\mprasad-v];
+DROP USER [WKNET\mprasad-v];
+GO
+
+ALTER ROLE [db_datareader] DROP MEMBER [clabanosk-sql];
+DROP USER [clabanosk-sql];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\jsmith4];
+DROP USER [WKNET\jsmith4];
+GO
+
+USE [COVID19Test];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [AzureCovidUser];
+DROP USER [AzureCovidUser];
+GO
+
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\programmers];
+
+GO
+
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\sng];
+ALTER ROLE [db_datawriter] DROP MEMBER [WKNET\sng];
+ALTER ROLE [db_ddladmin] DROP MEMBER [WKNET\sng];
+DROP USER [WKNET\sng];
+GO
+
+USE [CommunityPortal];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\skoduri];
+DROP USER [WKNET\skoduri];
+GO
+
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\Programmers];
+
+GO
+
+ALTER ROLE [GalacticaSync] DROP MEMBER [WKNET\tsgadmin];
+DROP USER [WKNET\tsgadmin];
+GO
+
+USE [DBATools];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\skoduri];
+DROP USER [WKNET\skoduri];
+GO
+
+USE [EDOverlayDashboard];
+GO
+
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\mprasad-v];
+ALTER ROLE [db_datawriter] DROP MEMBER [WKNET\mprasad-v];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\mprasad-v];
+DROP USER [WKNET\mprasad-v];
+GO
+
+ALTER ROLE [db_accessadmin] DROP MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_backupoperator] DROP MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_datawriter] DROP MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_ddladmin] DROP MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_denydatareader] DROP MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_denydatawriter] DROP MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_securityadmin] DROP MEMBER [WKNET\sqladmin];
+
+GO
+
+USE [EMPI];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\skoduri];
+DROP USER [WKNET\skoduri];
+GO
+
+ALTER ROLE [db_datareader] DROP MEMBER [ShamsSQL];
+DROP USER [ShamsSQL];
+GO
+
+USE [EMPIDB];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\jmiller];
+DROP USER [WKNET\jmiller];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\jsmith4];
+DROP USER [WKNET\jsmith4];
+GO
+
+USE [ExpanseDepot];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\sqladmin];
+DROP USER [WKNET\sqladmin];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [TSG_DM_BUILDER];
+DROP USER [TSG_DM_BUILDER];
+GO
+
+USE [HERMES];
+GO
+
+ALTER ROLE [HL7Readers] DROP MEMBER [WKNET\jsmith4];
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\jsmith4];
+ALTER ROLE [db_ddladmin] DROP MEMBER [WKNET\jsmith4];
+DROP USER [WKNET\jsmith4];
+GO
+
+ALTER ROLE [SoarianFinancialsScriptingRole] DROP MEMBER [WKNET\Programmers];
+
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [jmiller-sql];
+DROP USER [jmiller-sql];
+GO
+
+USE [Iris];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [sa];
+DROP USER [sa];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\jmiller];
+DROP USER [WKNET\jmiller];
+GO
+
+USE [PatientPortalPrintDB];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\sng];
+DROP USER [WKNET\sng];
+GO
+
+USE [PatientTracker];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [sa];
+DROP USER [sa];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [MergePatientTracker];
+DROP USER [MergePatientTracker];
+GO
+
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\programmers];
+
+GO
+
+USE [Poseidon];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\jsmith4];
+DROP USER [WKNET\jsmith4];
+GO
+
+USE [PoseidonReports];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [sa];
+DROP USER [sa];
+GO
+
+USE [RealTimeADT];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [sa];
+DROP USER [sa];
+GO
+
+ALTER ROLE [db_datareader] DROP MEMBER [globalaccess];
+DROP USER [globalaccess];
+GO
+
+ALTER ROLE [db_datareader] DROP MEMBER [ShamsSQL];
+DROP USER [ShamsSQL];
+GO
+
+ALTER ROLE [db_datareader] DROP MEMBER [jmiller-sql];
+ALTER ROLE [db_owner] DROP MEMBER [jmiller-sql];
+DROP USER [jmiller-sql];
+GO
+
+USE [SQLDashboard];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [sa];
+DROP USER [sa];
+GO
+
+USE [Scheduling];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\skoduri];
+DROP USER [WKNET\skoduri];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\wparker1];
+DROP USER [WKNET\wparker1];
+GO
+
+USE [SoarianProviderTranslation];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [sa];
+DROP USER [sa];
+GO
+
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\aadcock];
+DROP USER [WKNET\aadcock];
+GO
+
+USE [WKCLR];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [sa];
+DROP USER [sa];
+GO
+
+USE [kiosk];
+GO
+
+ALTER ROLE [db_datareader] DROP MEMBER [clabanosk-sql];
+DROP USER [clabanosk-sql];
+GO
+
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\sng];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\sng];
+DROP USER [WKNET\sng];
+GO
+
+ALTER ROLE [db_datareader] DROP MEMBER [HermesKioskUser];
+DROP USER [HermesKioskUser];
+GO
+
+ALTER ROLE [db_owner] DROP MEMBER [wknet];
+DROP USER [wknet];
+GO
+
