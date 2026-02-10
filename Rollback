@@ -1,0 +1,312 @@
+USE [COVID19];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\skoduri')
+    CREATE USER [WKNET\skoduri] FOR LOGIN [WKNET\skoduri];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\skoduri];
+GO
+
+USE [COVID19]
+GO
+ALTER AUTHORIZATION ON SCHEMA::[legacy-covid19] TO [WKNET\sng]
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\sng')
+    CREATE USER [WKNET\sng] FOR LOGIN [WKNET\sng];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\sng];
+ALTER ROLE [db_datawriter] ADD MEMBER [WKNET\sng];
+ALTER ROLE [db_ddladmin] ADD MEMBER [WKNET\sng];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\mefatian')
+    CREATE USER [WKNET\mefatian] FOR LOGIN [WKNET\mefatian];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\mefatian];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\mprasad-v')
+    CREATE USER [WKNET\mprasad-v] FOR LOGIN [WKNET\mprasad-v];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\mprasad-v];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'clabanosk-sql')
+    CREATE USER [clabanosk-sql] FOR LOGIN [clabanosk-sql];
+ALTER ROLE [db_datareader] ADD MEMBER [clabanosk-sql];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\jsmith4')
+    CREATE USER [WKNET\jsmith4] FOR LOGIN [WKNET\jsmith4];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\jsmith4];
+GO
+
+USE [COVID19Test];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'AzureCovidUser')
+    CREATE USER [AzureCovidUser] FOR LOGIN [AzureCovidUser];
+ALTER ROLE [db_owner] ADD MEMBER [AzureCovidUser];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\programmers')
+    CREATE USER [WKNET\programmers] FOR LOGIN [WKNET\programmers];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\programmers];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\sng')
+    CREATE USER [WKNET\sng] FOR LOGIN [WKNET\sng];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\sng];
+ALTER ROLE [db_datawriter] ADD MEMBER [WKNET\sng];
+ALTER ROLE [db_ddladmin] ADD MEMBER [WKNET\sng];
+GO
+
+USE [CommunityPortal];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\skoduri')
+    CREATE USER [WKNET\skoduri] FOR LOGIN [WKNET\skoduri];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\skoduri];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\Programmers')
+    CREATE USER [WKNET\Programmers] FOR LOGIN [WKNET\Programmers];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\Programmers];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\tsgadmin')
+    CREATE USER [WKNET\tsgadmin] FOR LOGIN [WKNET\tsgadmin];
+ALTER ROLE [GalacticaSync] ADD MEMBER [WKNET\tsgadmin];
+GO
+
+USE [DBATools];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\skoduri')
+    CREATE USER [WKNET\skoduri] FOR LOGIN [WKNET\skoduri];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\skoduri];
+GO
+
+USE [EDOverlayDashboard];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\mprasad-v')
+    CREATE USER [WKNET\mprasad-v] FOR LOGIN [WKNET\mprasad-v];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\mprasad-v];
+ALTER ROLE [db_datawriter] ADD MEMBER [WKNET\mprasad-v];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\mprasad-v];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\sqladmin')
+    CREATE USER [WKNET\sqladmin] FOR LOGIN [WKNET\sqladmin];
+ALTER ROLE [db_accessadmin] ADD MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_backupoperator] ADD MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_datawriter] ADD MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_ddladmin] ADD MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_denydatareader] ADD MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_denydatawriter] ADD MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_securityadmin] ADD MEMBER [WKNET\sqladmin];
+GO
+
+USE [EMPI];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\skoduri')
+    CREATE USER [WKNET\skoduri] FOR LOGIN [WKNET\skoduri];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\skoduri];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'ShamsSQL')
+    CREATE USER [ShamsSQL] FOR LOGIN [ShamsSQL];
+ALTER ROLE [db_datareader] ADD MEMBER [ShamsSQL];
+GO
+
+USE [EMPIDB];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\jmiller')
+    CREATE USER [WKNET\jmiller] FOR LOGIN [WKNET\jmiller];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\jmiller];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\jsmith4')
+    CREATE USER [WKNET\jsmith4] FOR LOGIN [WKNET\jsmith4];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\jsmith4];
+GO
+
+USE [ExpanseDepot];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\sqladmin')
+    CREATE USER [WKNET\sqladmin] FOR LOGIN [WKNET\sqladmin];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\sqladmin];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'TSG_DM_BUILDER')
+    CREATE USER [TSG_DM_BUILDER] FOR LOGIN [TSG_DM_BUILDER];
+ALTER ROLE [db_owner] ADD MEMBER [TSG_DM_BUILDER];
+GO
+
+USE [HERMES];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\jsmith4')
+    CREATE USER [WKNET\jsmith4] FOR LOGIN [WKNET\jsmith4];
+ALTER ROLE [HL7Readers] ADD MEMBER [WKNET\jsmith4];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\jsmith4];
+ALTER ROLE [db_ddladmin] ADD MEMBER [WKNET\jsmith4];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\Programmers')
+    CREATE USER [WKNET\Programmers] FOR LOGIN [WKNET\Programmers];
+ALTER ROLE [SoarianFinancialsScriptingRole] ADD MEMBER [WKNET\Programmers];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'jmiller-sql')
+    CREATE USER [jmiller-sql] FOR LOGIN [jmiller-sql];
+ALTER ROLE [db_owner] ADD MEMBER [jmiller-sql];
+GO
+
+USE [Iris];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'sa')
+    CREATE USER [sa] FOR LOGIN [sa];
+ALTER ROLE [db_owner] ADD MEMBER [sa];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\jmiller')
+    CREATE USER [WKNET\jmiller] FOR LOGIN [WKNET\jmiller];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\jmiller];
+GO
+
+USE [PatientPortalPrintDB];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\sng')
+    CREATE USER [WKNET\sng] FOR LOGIN [WKNET\sng];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\sng];
+GO
+
+USE [PatientTracker];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'sa')
+    CREATE USER [sa] FOR LOGIN [sa];
+ALTER ROLE [db_owner] ADD MEMBER [sa];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'MergePatientTracker')
+    CREATE USER [MergePatientTracker] FOR LOGIN [MergePatientTracker];
+ALTER ROLE [db_owner] ADD MEMBER [MergePatientTracker];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\programmers')
+    CREATE USER [WKNET\programmers] FOR LOGIN [WKNET\programmers];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\programmers];
+GO
+
+USE [Poseidon];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\jsmith4')
+    CREATE USER [WKNET\jsmith4] FOR LOGIN [WKNET\jsmith4];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\jsmith4];
+GO
+
+USE [PoseidonReports];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'sa')
+    CREATE USER [sa] FOR LOGIN [sa];
+ALTER ROLE [db_owner] ADD MEMBER [sa];
+GO
+
+USE [RealTimeADT];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'sa')
+    CREATE USER [sa] FOR LOGIN [sa];
+ALTER ROLE [db_owner] ADD MEMBER [sa];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'globalaccess')
+    CREATE USER [globalaccess] FOR LOGIN [globalaccess];
+ALTER ROLE [db_datareader] ADD MEMBER [globalaccess];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'ShamsSQL')
+    CREATE USER [ShamsSQL] FOR LOGIN [ShamsSQL];
+ALTER ROLE [db_datareader] ADD MEMBER [ShamsSQL];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'jmiller-sql')
+    CREATE USER [jmiller-sql] FOR LOGIN [jmiller-sql];
+ALTER ROLE [db_datareader] ADD MEMBER [jmiller-sql];
+ALTER ROLE [db_owner] ADD MEMBER [jmiller-sql];
+GO
+
+USE [SQLDashboard];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'sa')
+    CREATE USER [sa] FOR LOGIN [sa];
+ALTER ROLE [db_owner] ADD MEMBER [sa];
+GO
+
+USE [Scheduling];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\skoduri')
+    CREATE USER [WKNET\skoduri] FOR LOGIN [WKNET\skoduri];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\skoduri];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\wparker1')
+    CREATE USER [WKNET\wparker1] FOR LOGIN [WKNET\wparker1];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\wparker1];
+GO
+
+USE [SoarianProviderTranslation];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'sa')
+    CREATE USER [sa] FOR LOGIN [sa];
+ALTER ROLE [db_owner] ADD MEMBER [sa];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\aadcock')
+    CREATE USER [WKNET\aadcock] FOR LOGIN [WKNET\aadcock];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\aadcock];
+GO
+
+USE [WKCLR];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'sa')
+    CREATE USER [sa] FOR LOGIN [sa];
+ALTER ROLE [db_owner] ADD MEMBER [sa];
+GO
+
+USE [kiosk];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'clabanosk-sql')
+    CREATE USER [clabanosk-sql] FOR LOGIN [clabanosk-sql];
+ALTER ROLE [db_datareader] ADD MEMBER [clabanosk-sql];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\sng')
+    CREATE USER [WKNET\sng] FOR LOGIN [WKNET\sng];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\sng];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\sng];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'HermesKioskUser')
+    CREATE USER [HermesKioskUser] FOR LOGIN [HermesKioskUser];
+ALTER ROLE [db_datareader] ADD MEMBER [HermesKioskUser];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'wknet')
+    CREATE USER [wknet] FOR LOGIN [wknet];
+ALTER ROLE [db_owner] ADD MEMBER [wknet];
+GO
+
