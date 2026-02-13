@@ -309,4 +309,35 @@ IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'wknet')
     CREATE USER [wknet] FOR LOGIN [wknet];
 ALTER ROLE [db_owner] ADD MEMBER [wknet];
 GO
+USE [COVID19];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\jgrantham')
+    CREATE USER [WKNET\jgrantham] FOR LOGIN [WKNET\jgrantham];
+
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\jgrantham];
+GO
+
+
+------------------------------------
+USE [HERMES];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\jgrantham')
+    CREATE USER [WKNET\jgrantham] FOR LOGIN [WKNET\jgrantham];
+
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\jgrantham];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\jgrantham];
+GO
+
+
+------------------------------------
+USE [SoarianProviderTranslation];
+GO
+
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\jgrantham')
+    CREATE USER [WKNET\jgrantham] FOR LOGIN [WKNET\jgrantham];
+
+ALTER ROLE [db_ddladmin] ADD MEMBER [WKNET\jgrantham];
+GO
 
