@@ -263,4 +263,27 @@ GO
 ALTER ROLE [db_owner] DROP MEMBER [wknet];
 DROP USER [wknet];
 GO
+USE [COVID19];
+GO
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\jgrantham];
+DROP USER [WKNET\jgrantham];
+GO
+
+
+------------------------------------
+USE [HERMES];
+GO
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\jgrantham];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\jgrantham];
+DROP USER [WKNET\jgrantham];
+GO
+
+
+------------------------------------
+USE [SoarianProviderTranslation];
+GO
+ALTER ROLE [db_ddladmin] DROP MEMBER [WKNET\jgrantham];
+DROP USER [WKNET\jgrantham];
+GO
+
 
