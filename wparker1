@@ -1,0 +1,4 @@
+USE [Scheduling];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\wparker1];
+DROP USER [WKNET\wparker1];
+GO
