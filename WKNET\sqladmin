@@ -7,7 +7,6 @@ ALTER ROLE [db_ddladmin] DROP MEMBER [WKNET\sqladmin];
 ALTER ROLE [db_denydatareader] DROP MEMBER [WKNET\sqladmin];
 ALTER ROLE [db_denydatawriter] DROP MEMBER [WKNET\sqladmin];
 ALTER ROLE [db_securityadmin] DROP MEMBER [WKNET\sqladmin];
-DROP USER [WKNET\sqladmin];
 GO
 
 USE [ExpanseDepot];
