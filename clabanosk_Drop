@@ -18,3 +18,23 @@ USE [kiosk];
 ALTER ROLE [db_datareader] DROP MEMBER [clabanosk-sql];
 DROP USER [clabanosk-sql];
 GO
+USE [Authentication];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\clabanosk];
+DROP USER [WKNET\clabanosk];
+GO
+
+USE [COVID19Test];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\clabanosk];
+DROP USER [WKNET\clabanosk];
+GO
+
+USE [EMPIDB];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\clabanosk];
+DROP USER [WKNET\clabanosk];
+GO
+
+USE [Poseidon];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\clabanosk];
+DROP USER [WKNET\clabanosk];
+GO
+
