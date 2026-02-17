@@ -8,3 +8,13 @@ ALTER ROLE [db_datareader] DROP MEMBER [jmiller-sql];
 ALTER ROLE [db_owner] DROP MEMBER [jmiller-sql];
 DROP USER [jmiller-sql];
 GO
+
+USE [EMPIDB];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\jmiller];
+DROP USER [WKNET\jmiller];
+GO
+
+USE [Iris];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\jmiller];
+DROP USER [WKNET\jmiller];
+GO
