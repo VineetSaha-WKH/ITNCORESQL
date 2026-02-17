@@ -1,0 +1,9 @@
+USE [EMPI];
+ALTER ROLE [db_datareader] DROP MEMBER [ShamsSQL];
+DROP USER [ShamsSQL];
+GO
+
+USE [RealTimeADT];
+ALTER ROLE [db_datareader] DROP MEMBER [ShamsSQL];
+DROP USER [ShamsSQL];
+GO
