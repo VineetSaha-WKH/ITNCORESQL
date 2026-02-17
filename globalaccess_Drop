@@ -1,0 +1,4 @@
+USE [RealTimeADT];
+ALTER ROLE [db_datareader] DROP MEMBER [globalaccess];
+DROP USER [globalaccess];
+GO
