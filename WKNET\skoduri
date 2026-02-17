@@ -1,0 +1,56 @@
+USE [COVID19];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\skoduri];
+DROP USER [WKNET\skoduri];
+GO
+
+USE [CommunityPortal];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\skoduri];
+DROP USER [WKNET\skoduri];
+GO
+
+USE [DBATools];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\skoduri];
+DROP USER [WKNET\skoduri];
+GO
+
+USE [EMPI];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\skoduri];
+DROP USER [WKNET\skoduri];
+GO
+
+USE [Scheduling];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\skoduri];
+DROP USER [WKNET\skoduri];
+GO
+----------------------------------------------------------------------
+USE [COVID19];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\skoduri')
+    CREATE USER [WKNET\skoduri] FOR LOGIN [WKNET\skoduri];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\skoduri];
+GO
+
+USE [CommunityPortal];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\skoduri')
+    CREATE USER [WKNET\skoduri] FOR LOGIN [WKNET\skoduri];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\skoduri];
+GO
+
+USE [DBATools];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\skoduri')
+    CREATE USER [WKNET\skoduri] FOR LOGIN [WKNET\skoduri];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\skoduri];
+GO
+
+USE [EMPI];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\skoduri')
+    CREATE USER [WKNET\skoduri] FOR LOGIN [WKNET\skoduri];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\skoduri];
+GO
+
+USE [Scheduling];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\skoduri')
+    CREATE USER [WKNET\skoduri] FOR LOGIN [WKNET\skoduri];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\skoduri];
+GO
+
+
