@@ -1,0 +1,4 @@
+USE [COVID19Test];
+ALTER ROLE [db_owner] DROP MEMBER [AzureCovidUser];
+DROP USER [AzureCovidUser];
+GO
