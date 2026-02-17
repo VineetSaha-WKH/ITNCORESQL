@@ -1,0 +1,10 @@
+USE [HERMES];
+ALTER ROLE [db_owner] DROP MEMBER [jmiller-sql];
+DROP USER [jmiller-sql];
+GO
+
+USE [RealTimeADT];
+ALTER ROLE [db_datareader] DROP MEMBER [jmiller-sql];
+ALTER ROLE [db_owner] DROP MEMBER [jmiller-sql];
+DROP USER [jmiller-sql];
+GO
