@@ -1,0 +1,19 @@
+USE [COVID19Test];
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\programmers];
+DROP USER [WKNET\programmers];
+GO
+
+USE [PatientTracker];
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\programmers];
+DROP USER [WKNET\programmers];
+GO
+
+USE [CommunityPortal];
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\Programmers];
+DROP USER [WKNET\Programmers];
+GO
+
+USE [HERMES];
+ALTER ROLE [SoarianFinancialsScriptingRole] DROP MEMBER [WKNET\Programmers];
+DROP USER [WKNET\Programmers];
+GO
