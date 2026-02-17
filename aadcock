@@ -1,0 +1,4 @@
+USE [SoarianProviderTranslation];
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\aadcock];
+DROP USER [WKNET\aadcock];
+GO
