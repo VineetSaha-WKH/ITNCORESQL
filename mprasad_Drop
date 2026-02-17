@@ -1,0 +1,11 @@
+USE [COVID19];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\mprasad-v];
+DROP USER [WKNET\mprasad-v];
+GO
+
+USE [EDOverlayDashboard];
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\mprasad-v];
+ALTER ROLE [db_datawriter] DROP MEMBER [WKNET\mprasad-v];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\mprasad-v];
+DROP USER [WKNET\mprasad-v];
+GO
