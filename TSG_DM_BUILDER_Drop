@@ -2,3 +2,11 @@ USE [ExpanseDepot];
 ALTER ROLE [db_owner] DROP MEMBER [TSG_DM_BUILDER];
 DROP USER [TSG_DM_BUILDER];
 GO
+------------------------------------------------
+              Rollback
+------------------------------------------------
+USE [ExpanseDepot];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'TSG_DM_BUILDER')
+    CREATE USER [TSG_DM_BUILDER] FOR LOGIN [TSG_DM_BUILDER];
+ALTER ROLE [db_owner] ADD MEMBER [TSG_DM_BUILDER];
+GO
