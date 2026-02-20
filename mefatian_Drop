@@ -1,4 +1,0 @@
-USE [COVID19];
-ALTER ROLE [db_owner] DROP MEMBER [WKNET\mefatian];
-DROP USER [WKNET\mefatian];
-GO

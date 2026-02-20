@@ -1,0 +1,12 @@
+USE [COVID19];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\mefatian];
+DROP USER [WKNET\mefatian];
+GO
+-----------------------------------------------------
+Rollback
+-----------------------------------------------------
+USE [COVID19];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\mefatian')
+    CREATE USER [WKNET\mefatian] FOR LOGIN [WKNET\mefatian];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\mefatian];
+GO
