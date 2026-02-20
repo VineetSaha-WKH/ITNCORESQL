@@ -1,0 +1,90 @@
+USE [COVID19];
+ALTER ROLE [db_datareader] DROP MEMBER [clabanosk-sql];
+DROP USER [clabanosk-sql];
+GO
+
+USE [HERMES];
+ALTER ROLE [db_datareader] DROP MEMBER [clabanosk-sql];
+DROP USER [clabanosk-sql];
+GO
+
+USE [Poseidon];
+ALTER ROLE [db_datareader] DROP MEMBER [clabanosk-sql];
+ALTER ROLE [db_datawriter] DROP MEMBER [clabanosk-sql];
+DROP USER [clabanosk-sql];
+GO
+
+USE [kiosk];
+ALTER ROLE [db_datareader] DROP MEMBER [clabanosk-sql];
+DROP USER [clabanosk-sql];
+GO
+USE [Authentication];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\clabanosk];
+DROP USER [WKNET\clabanosk];
+GO
+
+USE [COVID19Test];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\clabanosk];
+DROP USER [WKNET\clabanosk];
+GO
+
+USE [EMPIDB];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\clabanosk];
+DROP USER [WKNET\clabanosk];
+GO
+
+USE [Poseidon];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\clabanosk];
+DROP USER [WKNET\clabanosk];
+GO
+--------------------------------
+     Rollback
+--------------------------------
+USE [Authentication];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\clabanosk')
+    CREATE USER [WKNET\clabanosk] FOR LOGIN [WKNET\clabanosk];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\clabanosk];
+GO
+
+USE [COVID19Test];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\clabanosk')
+    CREATE USER [WKNET\clabanosk] FOR LOGIN [WKNET\clabanosk];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\clabanosk];
+GO
+
+USE [EMPIDB];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\clabanosk')
+    CREATE USER [WKNET\clabanosk] FOR LOGIN [WKNET\clabanosk];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\clabanosk];
+GO
+
+USE [Poseidon];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\clabanosk')
+    CREATE USER [WKNET\clabanosk] FOR LOGIN [WKNET\clabanosk];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\clabanosk];
+GO
+USE [COVID19];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'clabanosk-sql')
+    CREATE USER [clabanosk-sql] FOR LOGIN [clabanosk-sql];
+ALTER ROLE [db_datareader] ADD MEMBER [clabanosk-sql];
+GO
+
+USE [HERMES];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'clabanosk-sql')
+    CREATE USER [clabanosk-sql] FOR LOGIN [clabanosk-sql];
+ALTER ROLE [db_datareader] ADD MEMBER [clabanosk-sql];
+GO
+
+USE [Poseidon];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'clabanosk-sql')
+    CREATE USER [clabanosk-sql] FOR LOGIN [clabanosk-sql];
+ALTER ROLE [db_datareader] ADD MEMBER [clabanosk-sql];
+ALTER ROLE [db_datawriter] ADD MEMBER [clabanosk-sql];
+GO
+
+USE [kiosk];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'clabanosk-sql')
+    CREATE USER [clabanosk-sql] FOR LOGIN [clabanosk-sql];
+ALTER ROLE [db_datareader] ADD MEMBER [clabanosk-sql];
+GO
+
