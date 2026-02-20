@@ -1,4 +1,0 @@
-USE [CommunityPortal];
-ALTER ROLE [GalacticaSync] DROP MEMBER [WKNET\tsgadmin];
-DROP USER [WKNET\tsgadmin];
-GO

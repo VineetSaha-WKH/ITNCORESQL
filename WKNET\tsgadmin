@@ -1,0 +1,13 @@
+USE [CommunityPortal];
+ALTER ROLE [GalacticaSync] DROP MEMBER [WKNET\tsgadmin];
+DROP USER [WKNET\tsgadmin];
+GO
+--------------------------------------------
+     Rollback
+--------------------------------------------
+USE [CommunityPortal];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\tsgadmin')
+    CREATE USER [WKNET\tsgadmin] FOR LOGIN [WKNET\tsgadmin];
+ALTER ROLE [GalacticaSync] ADD MEMBER [WKNET\tsgadmin];
+GO
+
