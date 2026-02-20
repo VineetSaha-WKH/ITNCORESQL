@@ -1,0 +1,13 @@
+USE [PatientTracker];
+ALTER ROLE [db_owner] DROP MEMBER [MergePatientTracker];
+DROP USER [MergePatientTracker];
+GO
+-----------------------
+   Rollback
+-----------------------
+USE [PatientTracker];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'MergePatientTracker')
+    CREATE USER [MergePatientTracker] FOR LOGIN [MergePatientTracker];
+ALTER ROLE [db_owner] ADD MEMBER [MergePatientTracker];
+GO
+
