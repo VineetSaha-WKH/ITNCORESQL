@@ -1,0 +1,50 @@
+USE [HERMES];
+ALTER ROLE [db_owner] DROP MEMBER [jmiller-sql];
+DROP USER [jmiller-sql];
+GO
+
+USE [RealTimeADT];
+ALTER ROLE [db_datareader] DROP MEMBER [jmiller-sql];
+ALTER ROLE [db_owner] DROP MEMBER [jmiller-sql];
+DROP USER [jmiller-sql];
+GO
+
+USE [EMPIDB];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\jmiller];
+DROP USER [WKNET\jmiller];
+GO
+
+USE [Iris];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\jmiller];
+DROP USER [WKNET\jmiller];
+GO
+--------------------------------------------------------
+     Rollback
+--------------------------------------------------------
+USE [EMPIDB];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\jmiller')
+    CREATE USER [WKNET\jmiller] FOR LOGIN [WKNET\jmiller];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\jmiller];
+GO
+
+USE [Iris];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\jmiller')
+    CREATE USER [WKNET\jmiller] FOR LOGIN [WKNET\jmiller];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\jmiller];
+GO
+
+USE [HERMES];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'jmiller-sql')
+    CREATE USER [jmiller-sql] FOR LOGIN [jmiller-sql];
+ALTER ROLE [db_owner] ADD MEMBER [jmiller-sql];
+GO
+
+
+USE [RealTimeADT];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'jmiller-sql')
+    CREATE USER [jmiller-sql] FOR LOGIN [jmiller-sql];
+ALTER ROLE [db_datareader] ADD MEMBER [jmiller-sql];
+ALTER ROLE [db_owner] ADD MEMBER [jmiller-sql];
+GO
+
+
