@@ -2,3 +2,11 @@ USE [Scheduling];
 ALTER ROLE [db_owner] DROP MEMBER [WKNET\wparker1];
 DROP USER [WKNET\wparker1];
 GO
+------------------------------------------
+Revoke
+-----------------------------------------
+USE [Scheduling];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\wparker1')
+    CREATE USER [WKNET\wparker1] FOR LOGIN [WKNET\wparker1];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\wparker1];
+GO
