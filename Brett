@@ -1,0 +1,36 @@
+USE [COVID19];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\jgrantham];
+DROP USER [WKNET\jgrantham];
+GO
+
+USE [HERMES];
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\jgrantham];
+ALTER ROLE [db_owner] DROP MEMBER [WKNET\jgrantham];
+DROP USER [WKNET\jgrantham];
+GO
+
+USE [SoarianProviderTranslation];
+ALTER ROLE [db_ddladmin] DROP MEMBER [WKNET\jgrantham];
+DROP USER [WKNET\jgrantham];
+GO
+---------------------
+  Rollback
+----------------------
+USE [COVID19];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\jgrantham')
+    CREATE USER [WKNET\jgrantham] FOR LOGIN [WKNET\jgrantham];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\jgrantham];
+GO
+
+USE [HERMES];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\jgrantham')
+    CREATE USER [WKNET\jgrantham] FOR LOGIN [WKNET\jgrantham];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\jgrantham];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\jgrantham];
+GO
+
+USE [SoarianProviderTranslation];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\jgrantham')
+    CREATE USER [WKNET\jgrantham] FOR LOGIN [WKNET\jgrantham];
+ALTER ROLE [db_ddladmin] ADD MEMBER [WKNET\jgrantham];
+GO
