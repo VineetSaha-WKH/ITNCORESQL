@@ -1,0 +1,47 @@
+USE [COVID19Test];
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\programmers];
+
+GO
+
+USE [PatientTracker];
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\programmers];
+
+GO
+
+USE [CommunityPortal];
+ALTER ROLE [db_datareader] DROP MEMBER [WKNET\Programmers];
+
+GO
+
+USE [HERMES];
+ALTER ROLE [SoarianFinancialsScriptingRole] DROP MEMBER [WKNET\Programmers];
+
+GO
+------------------------------------------
+         Rollback
+------------------------------------------
+USE [COVID19Test];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\programmers')
+    CREATE USER [WKNET\programmers] FOR LOGIN [WKNET\programmers];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\programmers];
+GO
+
+USE [PatientTracker];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\programmers')
+    CREATE USER [WKNET\programmers] FOR LOGIN [WKNET\programmers];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\programmers];
+GO
+
+USE [CommunityPortal];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\Programmers')
+    CREATE USER [WKNET\Programmers] FOR LOGIN [WKNET\Programmers];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\Programmers];
+GO
+
+USE [HERMES];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\Programmers')
+    CREATE USER [WKNET\Programmers] FOR LOGIN [WKNET\Programmers];
+ALTER ROLE [SoarianFinancialsScriptingRole] ADD MEMBER [WKNET\Programmers];
+GO
+
+
