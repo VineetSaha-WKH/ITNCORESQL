@@ -13,3 +13,24 @@ USE [ExpanseDepot];
 ALTER ROLE [db_owner] DROP MEMBER [WKNET\sqladmin];
 DROP USER [WKNET\sqladmin];
 GO
+---------------------------------------------------------------------------------
+Rollback
+---------------------------------------------------------------------------------
+USE [EDOverlayDashboard];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\sqladmin')
+    CREATE USER [WKNET\sqladmin] FOR LOGIN [WKNET\sqladmin];
+ALTER ROLE [db_accessadmin] ADD MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_backupoperator] ADD MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_datawriter] ADD MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_ddladmin] ADD MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_denydatareader] ADD MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_denydatawriter] ADD MEMBER [WKNET\sqladmin];
+ALTER ROLE [db_securityadmin] ADD MEMBER [WKNET\sqladmin];
+GO
+
+USE [ExpanseDepot];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\sqladmin')
+    CREATE USER [WKNET\sqladmin] FOR LOGIN [WKNET\sqladmin];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\sqladmin];
+GO
