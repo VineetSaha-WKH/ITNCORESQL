@@ -9,3 +9,19 @@ ALTER ROLE [db_datawriter] DROP MEMBER [WKNET\mprasad-v];
 ALTER ROLE [db_owner] DROP MEMBER [WKNET\mprasad-v];
 DROP USER [WKNET\mprasad-v];
 GO
+---------------------------------------
+Rollback
+--------------------------------------
+USE [COVID19];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\mprasad-v')
+    CREATE USER [WKNET\mprasad-v] FOR LOGIN [WKNET\mprasad-v];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\mprasad-v];
+GO
+
+USE [EDOverlayDashboard];
+IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = N'WKNET\mprasad-v')
+    CREATE USER [WKNET\mprasad-v] FOR LOGIN [WKNET\mprasad-v];
+ALTER ROLE [db_datareader] ADD MEMBER [WKNET\mprasad-v];
+ALTER ROLE [db_datawriter] ADD MEMBER [WKNET\mprasad-v];
+ALTER ROLE [db_owner] ADD MEMBER [WKNET\mprasad-v];
+GO
